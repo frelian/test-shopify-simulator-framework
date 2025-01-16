@@ -143,3 +143,13 @@ Visit `http://localhost:3000` in your browser to view the simulator in action.
 Feel free to customize the simulator further to match your requirements. Happy coding! 🚀
 
 For more information about Liquid, refer to the [official Liquid documentation](https://liquidjs.com/tutorials/intro-to-liquid.html).
+
+---
+
+
+## **Changes**
+
+### Webpack configuration
+* Fixed webpack configuration to generate styles.css file
+* Installed mini-css-extract-plugin
+* sass-loader, sass are updated
