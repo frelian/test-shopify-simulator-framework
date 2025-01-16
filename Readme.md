@@ -149,6 +149,12 @@ For more information about Liquid, refer to the [official Liquid documentation](
 
 ## **Changes**
 
+### Header section and new packages
+* Added payment icons and logo
+* New packages to autodetect changes: 
+  * npm install nodemon --save-dev
+  * npm install --save-dev file-loader
+
 ### Webpack configuration
 * Fixed webpack configuration to generate styles.css file
 * Installed mini-css-extract-plugin

@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \********************/
 /***/ (() => {
 
-eval("console.log('Gradiweb is online!!!');\n\n\n//# sourceURL=webpack://shopify-simulator/./src/app.js?");
+eval("console.log('Gradiweb is online!!!');\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    const header = document.querySelector('.header');\n\n    window.addEventListener('scroll', () => {\n        if (window.scrollY > 50) {\n            header.classList.add('sticky');\n        } else {\n            header.classList.remove('sticky');\n        }\n    });\n});\n\n\n//# sourceURL=webpack://shopify-simulator/./src/app.js?");
 
 /***/ })
 

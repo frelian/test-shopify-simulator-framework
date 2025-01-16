@@ -1,0 +1,31 @@
+<header class="header">
+    <div class="header__container">
+        <!-- Logo de la marca -->
+        <div class="header__logo">
+            <a href="/">
+                <img src="{{ 'assets/logo.svg' | asset_url }}" alt="Brand Logo" />
+            </a>
+        </div>
+
+        <!-- Medios de pago aceptados -->
+        <div class="header__payments">
+            <span class="header__payments-label">We Accept</span>
+            <div class="header__payments-icons">
+                <img src="{{ 'assets/icons/bitcoin-icon.png' | asset_url }}" alt="Bitcoin" />
+                <img src="{{ 'assets/icons/ethereum-icon.png' | asset_url }}" alt="Ethereum" />
+                <img src="{{ 'assets/icons/litecoin-icon.png' | asset_url }}" alt="Litecoin" />
+                <img src="{{ 'assets/icons/dogecoin-icon.png' | asset_url }}" alt="Dogecoin" />
+                <img src="{{ 'assets/icons/usdc-icon.png' | asset_url }}" alt="USDC" />
+            </div>
+        </div>
+
+        <!-- Links y carrito -->
+        <div class="header__links">
+            <a href="#featured-products" class="header__link">All Products</a>
+            <a href="#collections" class="header__link">Collections</a>
+            <button class="header__cart" aria-label="Cart">
+                <img src="{{ 'assets/icons/cart.svg' | asset_url }}" alt="Cart icon" />
+            </button>
+        </div>
+    </div>
+</header>

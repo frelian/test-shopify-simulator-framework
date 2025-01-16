@@ -3,11 +3,118 @@
   \**********************************************************************************************************/
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(24, 230, 68);
+  background-color: rgb(23, 23, 23);
   margin: 0;
   padding: 0;
+  line-height: inherit;
 }
 body h2 {
-  color: #333;
+  color: #f5f5f6;
   text-align: center;
+}
+
+.bg-image {
+  background-image: url(assets/bg.webp);
+}
+
+.bg-neutral-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23, 23, 23);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgb(23, 23, 23);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+.header.sticky {
+  background-color: rgba(35, 33, 40, 0.3);
+  backdrop-filter: blur(16px);
+}
+.header .header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .header .header__container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+}
+.header .header__logo {
+  display: flex;
+  align-items: center;
+}
+.header .header__logo img {
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+.header .header__logo .header__brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f5f5f6;
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  .header .header__logo .header__brand-name {
+    font-size: 1.2rem;
+  }
+}
+.header .header__payments {
+  display: flex;
+  align-items: center;
+  background-color: rgb(23, 23, 23);
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid #6a44ff;
+}
+.header .header__payments-label {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-right: 10px;
+}
+.header .header__payments-icons {
+  display: flex;
+}
+.header .header__payments-icons img {
+  height: 20px;
+  margin: 0 5px;
+}
+.header .header__links {
+  display: flex;
+  align-items: center;
+}
+.header .header__links .header__link {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #f5f5f6;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.header .header__links .header__link:hover {
+  color: #6a44ff;
+}
+.header .header__links .header__cart {
+  background: #6a44ff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.header .header__links .header__cart:hover {
+  background-color: rgb(65.3636363636, 17, 255);
 }
