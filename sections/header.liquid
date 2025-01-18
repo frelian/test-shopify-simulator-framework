@@ -1,13 +1,79 @@
 <header class="header">
-    <div class="header__container">
-        <!-- Logo de la marca -->
+    <div class="container header__container">
+
+        <!-- Menú hamburguesa -->
+        <div class="header__menu-toggle">
+
+            <!-- Ícono hamburguesa -->
+            <div
+                    class="header__menu-icon"
+                    onclick="toggleMenu()"
+                    id="menu-icon"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="15" fill="none">
+                    <path
+                            stroke="#762CFB"
+                            stroke-width="3"
+                            d="M0 1.5h36M0 13.5h36"
+                    ></path>
+                </svg>
+            </div>
+
+            <!-- Ícono de cierre -->
+            <div
+                    class="header__menu-close"
+                    onclick="toggleMenu()"
+                    id="menu-close"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                    <path
+                            stroke="#fff"
+                            stroke-width="3"
+                            d="M1.395 22.527 21.939 1.983M2.061 1.939l20.544 20.544"
+                    ></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Logo -->
         <div class="header__logo">
-            <a href="/">
-                <img src="{{ 'assets/logo.svg' | asset_url }}" alt="Brand Logo" />
+            <a href="{{ '/' | relative_url }}">
+                <img src="{{ 'assets/logo.svg' | asset_url }}" alt="Logo">
+                <span class="header__brand-name">{{ shop.name }}</span>
             </a>
         </div>
 
-        <!-- Medios de pago aceptados -->
+        <!-- Desktop -->
+        <div class="header__links">
+            <div class="header__payments">
+                <span class="header__payments-label">We Accept</span>
+                <div class="header__payments-icons">
+                    <img src="{{ 'assets/icons/bitcoin-icon.png' | asset_url }}" alt="Bitcoin" />
+                    <img src="{{ 'assets/icons/ethereum-icon.png' | asset_url }}" alt="Ethereum" />
+                    <img src="{{ 'assets/icons/litecoin-icon.png' | asset_url }}" alt="Litecoin" />
+                    <img src="{{ 'assets/icons/dogecoin-icon.png' | asset_url }}" alt="Dogecoin" />
+                    <img src="{{ 'assets/icons/usdc-icon.png' | asset_url }}" alt="USDC" />
+                </div>
+            </div>
+
+            <a href="#featured-products" class="header__link">All Products</a>
+            <a href="#collections" class="header__link">Collections</a>
+        </div>
+
+        <!-- Botón del carrito -->
+        <button class="header__cart" aria-label="Cart">
+            <img src="{{ 'assets/icons/cart.svg' | asset_url }}" alt="Cart icon" />
+        </button>
+    </div>
+
+    <!-- Menú mobile -->
+    <div class="header__menu " id="menu">
+        <div class="header__menu-links">
+            <a href="#featured-products" class="header__link">All Products</a>
+            <a href="#collections" class="header__link">Collections</a>
+        </div>
+
+        <!-- Bloque de pagos en el menu -->
         <div class="header__payments">
             <span class="header__payments-label">We Accept</span>
             <div class="header__payments-icons">
@@ -18,14 +84,38 @@
                 <img src="{{ 'assets/icons/usdc-icon.png' | asset_url }}" alt="USDC" />
             </div>
         </div>
-
-        <!-- Links y carrito -->
-        <div class="header__links">
-            <a href="#featured-products" class="header__link">All Products</a>
-            <a href="#collections" class="header__link">Collections</a>
-            <button class="header__cart" aria-label="Cart">
-                <img src="{{ 'assets/icons/cart.svg' | asset_url }}" alt="Cart icon" />
-            </button>
-        </div>
     </div>
 </header>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+    });
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const menuClose = document.getElementById("menu-close");
+        const body = document.body;
+
+        menu.classList.toggle("header__menu--open");
+
+        // Bloquear el scroll del body cuando el menú está abierto
+        body.style.overflow = menu.classList.contains("header__menu--open") ? "hidden" : "";
+
+        menuIcon.classList.toggle("header__menu-icon--hidden");
+        menuClose.classList.toggle("header__menu-close--visible");
+    }
+
+</script>

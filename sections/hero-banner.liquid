@@ -1,0 +1,15 @@
+<section class="container hero-banner">
+
+    <!-- Imagen de fondo -->
+    <div class="hero-banner__image">
+        <img src="{{ 'assets/homepage_bottom_banner.avif' | asset_url }}" alt="Hero Banner" />
+    </div>
+
+    <!-- Contenido principal del hero -->
+    <div class="hero-banner__content">
+        <a href="{{ section.settings.hero_button_link }}" class="hero-banner__button">
+            {{ settings['hero-banner'].settings.hero_button_text }}
+        </a>
+    </div>
+
+</section>

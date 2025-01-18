@@ -149,6 +149,10 @@ For more information about Liquid, refer to the [official Liquid documentation](
 
 ## **Changes**
 
+### Menu, Header section and marquee added
+* Pending to make responsive "marquee"
+* Pending to make responsive hero button
+
 ### Header section and new packages
 * Added payment icons and logo
 * New packages to autodetect changes: 
